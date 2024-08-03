@@ -1,0 +1,280 @@
+/* @import url("https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Londrina+Solid:wght@100;300;400;900&display=swap"); */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+    --radius: 0.5rem;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+html {
+  font-size: 1vw;
+}
+body {
+  background-color: rgb(1, 38, 35);
+  color: #fff;
+}
+.text-banner {
+  font-family: Fraunces;
+  font-size: 3.75rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 4.25rem; /* 113.333% */
+  background: linear-gradient(
+    180deg,
+    #e2b648 0%,
+    #daac43 16.3%,
+    #ba8632 42.2%,
+    #e2b648 70.3%,
+    #ab742a 100%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.textH2 {
+  font-family: Fraunces;
+  font-size: 3.75rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 4.71875rem; /* 125.833% */
+  background: linear-gradient(
+    180deg,
+    #e2b648 0%,
+    #daac43 16.3%,
+    #ba8632 42.2%,
+    #e2b648 70.3%,
+    #ab742a 100%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.textHeader {
+  font-family: Fraunces;
+  background: linear-gradient(
+    180deg,
+    #e2b648 0%,
+    #daac43 16.3%,
+    #ba8632 42.2%,
+    #e2b648 70.3%,
+    #ab742a 100%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.boxColor {
+  width: 8.125rem;
+  height: 8.125rem;
+  border-radius: 0.625rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 4px 35px 0px rgba(211, 161, 74, 0.1);
+}
+.slide .swiper-slide {
+  width: fit-content !important;
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.boxResult {
+  display: flex;
+  width: 72.25rem;
+  height: 39.5rem;
+  padding: 1rem 1rem 1rem 1rem;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.625rem;
+  flex-shrink: 0;
+  border-radius: 1.5rem;
+  background: rgba(255, 255, 255, 0.1);
+
+  /* thử */
+  box-shadow: 0px 1px 50px 0px rgba(0, 0, 0, 0.08);
+}
+.bg-last {
+  position: relative;
+  /* overflow: hidden;  */
+}
+.bg-last::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 60%;
+  height: 35%;
+  background-image: url("/images/bg-layout2.png"); /* Đường dẫn tới ảnh nền */
+  background-size: contain;
+  background-position: right;
+  background-repeat: no-repeat;
+  transform: rotate(180deg); /* Lật ngược ảnh nền 180 độ */
+  z-index: -1; /* Đảm bảo ảnh nền nằm phía sau nội dung */
+}
+.container-warraper .swiper-wrapper {
+  height: calc(31.4375rem);
+}
+
+.container-warraper .swiper-scrollbar {
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  left: 0;
+  right: 0;
+  background: linear-gradient(
+    180deg,
+    #e2b64858 0%,
+    #DAAC4316.3%,
+    #BA863242.2%,
+    #E2B64870.3%,
+    #ab732a52 100%
+  );
+  /* background-color: #333 !important; */
+  height: 0.1625rem !important;
+  border-radius: 99px;
+  z-index: 1000 !important;
+}
+.container-warraper .swiper-scrollbar .swiper-scrollbar-drag {
+  width: calc(100% / 3) !important;
+  height: 0.1625rem !important;
+  border-radius: 99px;
+  background: linear-gradient(
+    180deg,
+    #e2b648 0%,
+    #DAAC4316.3%,
+    #BA863242.2%,
+    #E2B64870.3%,
+    #ab742a 100%
+  );
+  /* background-color: #fff !important; */
+}
+/* .abb{
+  background-position: 0 100px;
+} */
+@media only screen and (max-width: 767px) {
+  html {
+    font-size: 4.266667vw;
+  }
+  .text-banner {
+    font-family: Fraunces;
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 2.25rem; /* 150% */
+    background: linear-gradient(
+      180deg,
+      #e2b648 0%,
+      #daac43 16.3%,
+      #ba8632 42.2%,
+      #e2b648 70.3%,
+      #ab742a 100%
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .textH2 {
+    font-size: 1.5rem;
+    line-height: 2.25rem;
+  }
+  .boxResult {
+    display: flex;
+    width: 21.9375rem;
+    height: 12.125rem;
+    padding: 0.5rem 0.5rem 0.2rem 0.5rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.625rem;
+    flex-shrink: 0;
+    border-radius: 0.5rem;
+    background: rgba(255, 255, 255, 0.1);
+
+    /* thử */
+    box-shadow: 0px 1px 50px 0px rgba(0, 0, 0, 0.08);
+  }
+  .slide .swiper {
+    width: 115%;
+  }
+}
