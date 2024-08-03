@@ -4,7 +4,6 @@ import Aos from "aos";
 import "aos/dist/aos.css";
 import Banner from "@/sections/Banner/Banner";
 import Benefit from "@/sections/Benefit/Benefit";
-import BusinessProducts from "@/sections/businessProducts/businessProducts";
 import GridSystem from "@/sections/GridSystem/GridSystem";
 import History from "@/sections/History/History";
 import LastSection from "@/sections/LastSection/LastSection";
@@ -14,6 +13,7 @@ import Research3C from "@/sections/Research3C/Research3C";
 import Result from "@/sections/Result/Result";
 import Slide from "@/sections/Slide/Slide";
 import TypographyColor from "@/sections/TypographyColor/TypographyColor";
+import BusinessProducts from "@/sections/businessProducts/BusinessProducts";
 
 const App = () => {
   useEffect(function () {

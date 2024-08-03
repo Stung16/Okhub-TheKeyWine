@@ -15,9 +15,12 @@ import { Autoplay, Pagination, Navigation, FreeMode } from "swiper/modules";
 import Image from "next/image";
 
 const Slide = () => {
-  const [isSmallScreen, setIsSmallScreen] = useState(window?.innerWidth <= 767);
+  const [isSmallScreen, setIsSmallScreen] = useState(null);
 
   useEffect(() => {
+    if (window) {
+      setIsSmallScreen(window?.innerWidth <= 767);
+    }
     const mediaQuery = window?.matchMedia("(max-width: 767px)");
 
     const handleMediaQueryChange = (event) => {
@@ -44,7 +47,7 @@ const Slide = () => {
           slidesPerView={isSmallScreen ? 1.5 : 2}
           spaceBetween={16}
           freeMode={true}
-          centeredSlides={ true}
+          centeredSlides={true}
           autoplay={{
             delay: 2500,
             disableOnInteraction: false,

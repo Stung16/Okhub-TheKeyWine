@@ -18,9 +18,12 @@ import {
   Scrollbar,
 } from "swiper/modules";
 const ProductDetails = () => {
-  const [isSmallScreen, setIsSmallScreen] = useState(window?.innerWidth <= 767);
+  const [isSmallScreen, setIsSmallScreen] = useState(null);
 
   useEffect(() => {
+    if (window) {
+      setIsSmallScreen(window?.innerWidth <= 767);
+    }
     const mediaQuery = window?.matchMedia("(max-width: 767px)");
 
     const handleMediaQueryChange = (event) => {
@@ -181,7 +184,7 @@ const ProductDetails = () => {
                   }}
                   scrollbar={true}
                   pagination={{
-                    el: '.abc',
+                    el: ".abc",
                   }}
                   // navigation={true}
                   modules={[
