@@ -1,50 +1,22 @@
-"use client";
-import React, { useEffect, useRef, useState } from "react";
-// Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
-
-// Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-
 import "../../app/globals.css";
-
-// import required modules
 import { Autoplay, Pagination, Navigation, FreeMode } from "swiper/modules";
 import Image from "next/image";
+import useWindowSize from "@/hooks/useScreenSize";
 
 const Slide = () => {
-  const [isSmallScreen, setIsSmallScreen] = useState(null);
-
-  useEffect(() => {
-    if (window) {
-      setIsSmallScreen(window?.innerWidth <= 767);
-    }
-    const mediaQuery = window?.matchMedia("(max-width: 767px)");
-
-    const handleMediaQueryChange = (event) => {
-      setIsSmallScreen(event?.matches);
-    };
-
-    // Listen for changes
-    mediaQuery.addEventListener("change", handleMediaQueryChange);
-
-    // Cleanup function
-    return () => {
-      mediaQuery.removeEventListener("change", handleMediaQueryChange);
-    };
-  }, []);
-
+  const { width } = useWindowSize();
+  const isMobile = width <= 767;
   return (
     <section className="md:pb-[37rem] pb-[20rem] slide">
       <div
         className="md:my-[10.25rem] my-[3.5rem] bg-[#012623]"
-        // data-aos-once
-        // data-aos="fade-right"
       >
         <Swiper
-          slidesPerView={isSmallScreen ? 1.5 : 2}
+          slidesPerView={isMobile ? 1.5 : 2}
           spaceBetween={16}
           freeMode={true}
           centeredSlides={true}
@@ -52,10 +24,6 @@ const Slide = () => {
             delay: 2500,
             disableOnInteraction: false,
           }}
-          // pagination={{
-          //   clickable: true,
-          // }}
-          // navigation={true}
           modules={[Pagination, Navigation, FreeMode, Autoplay]}
           className="mySwiper "
         >

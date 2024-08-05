@@ -1,5 +1,4 @@
 import BoxColor from "@/components/BoxColor";
-import React from "react";
 
 const TypographyColor = () => {
   return (

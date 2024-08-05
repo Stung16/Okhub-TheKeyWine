@@ -1,5 +1,3 @@
-import React from "react";
-
 const BoxColor = ({ text, bg, color, animate, delay }) => {
   return (
     <div

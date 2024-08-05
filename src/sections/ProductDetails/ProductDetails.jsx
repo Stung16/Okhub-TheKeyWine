@@ -1,5 +1,4 @@
 import Image from "next/image";
-import React, { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
@@ -9,7 +8,6 @@ import "swiper/css/navigation";
 
 import "../../app/globals.css";
 
-// import required modules
 import {
   Autoplay,
   Pagination,
@@ -17,27 +15,10 @@ import {
   FreeMode,
   Scrollbar,
 } from "swiper/modules";
+import useWindowSize from "@/hooks/useScreenSize";
 const ProductDetails = () => {
-  const [isSmallScreen, setIsSmallScreen] = useState(null);
-
-  useEffect(() => {
-    if (window) {
-      setIsSmallScreen(window?.innerWidth <= 767);
-    }
-    const mediaQuery = window?.matchMedia("(max-width: 767px)");
-
-    const handleMediaQueryChange = (event) => {
-      setIsSmallScreen(event?.matches);
-    };
-
-    // Listen for changes
-    mediaQuery.addEventListener("change", handleMediaQueryChange);
-
-    // Cleanup function
-    return () => {
-      mediaQuery.removeEventListener("change", handleMediaQueryChange);
-    };
-  }, []);
+  const { width } = useWindowSize();
+  const isMobile = width <= 767;
   return (
     <section className="md:bg-[#1a3c39] bg-[#012623] md:pb-[5.38rem] relative md:mt-0 mt-[3.63rem]">
       <div className="md:ml-[6.25rem] md:mr-[7rem] mx-[0.62rem] grid md:grid-cols-2 grid-cols-1 md:gap-x-[3.5rem] gap-y-6">
@@ -151,7 +132,7 @@ const ProductDetails = () => {
       {/* responsice */}
       <div className="md:mt-[8.96rem] md:ml-[6.25rem] md:mr-[7rem] container-warraper">
         {/* slide mobile show */}
-        {isSmallScreen ? (
+        {isMobile ? (
           <div className="grid grid-cols-1 gap-y-[2rem] mt-10">
             <div
               className="flex flex-col space-y-[2.5rem]"

@@ -1,5 +1,3 @@
-import React from "react";
-
 const Benefit = () => {
   return (
     <section className="grid grid-cols-1 grid-rows-[repeat(2,[row]_auto_)] gap-y-[1.94rem]  md:grid-cols-2 items-center relative mt-[6.44rem] md:mt-0">
